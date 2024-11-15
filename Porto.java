@@ -48,12 +48,14 @@ public class Porto {
                 }
             }
         }
+        
+        System.out.println("La barca " + b.getNome() + " è stata assegnata al posto " + posto+1);
         if (b.getTipologia()) {
             System.out.println("Il costo dell'affitto è di " + 20 * b.getLunghezza() * giorni + " eur");
         } else {
             System.out.println("Il costo dell'affitto è di " + 10 * b.getStazza() * giorni + " eur");
         }
-        System.out.println("La barca è stata assegnata al posto " + posto);
+        System.out.print("\n");
     }
 
 }
