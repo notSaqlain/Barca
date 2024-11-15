@@ -50,6 +50,8 @@ public class Main {
                     break;
             }
         } while (scelta != 4);
+
+        scanner.close();
     }
 
     public static void Menu() {
