@@ -11,7 +11,7 @@ public class Main {
         int scelta = 0;
         do {
             Menu();
-            System.out.println("--> ");
+            System.out.println("Inserisci la tua scelta: ");
             scelta = scanner.nextInt();
             switch (scelta) {
                 case 1:
