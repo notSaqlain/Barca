@@ -1,28 +1,65 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Barca> barche = new ArrayList<Barca>();
-        
-        Barca b1 = new Barca("Barca1", "Italia", 10, 100, true);
-        Barca b2 = new Barca("Barca2", "Spagna", 20, 200, false);
-        Barca b3 = new Barca("Barca3", "Francia", 30, 300, true);
-        
-        barche.add(b1);
-        barche.add(b2);
-        barche.add(b3);
-        
-        for(Barca b : barche){
-            System.out.println(b);
-        }
-
-        System.out.println("\n");
-
         Porto p = new Porto();
-        p.assegnaPosto(b1, 5);
-        p.assegnaPosto(b2, 5);
-        p.assegnaPosto(b3, 5);
 
+        int scelta = 0;
+        do {
+            Menu();
+            scelta = 0;
+            switch (scelta) {
+                case 1:
+                    System.out.println("Inserisci il nome della barca: ");
+                    String nome = scanner.nextLine();
+                    System.out.println("Inserisci la nazionalità della barca: ");
+                    String nazionalita = scanner.nextLine();
+                    System.out.println("Inserisci la lunghezza della barca: ");
+                    int lunghezza = scanner.nextInt();
+                    System.out.println("Inserisci la stazza della barca: ");
+                    int stazza = scanner.nextInt();
+                    System.out.println("Inserisci la tipologia della barca: ");
+                    boolean tipologia = scanner.nextBoolean();
+                    Barca b = new Barca(nome, nazionalita, lunghezza, stazza, tipologia);
+                    barche.add(b);
+                    break;
+                case 2:
+                    for(Barca barca : barche){
+                        System.out.println(barca);
+                    }
+                    break;
+                case 3:
+                    System.out.println("Inserisci il nome della barca: ");
+                    String nomeBarca = scanner.nextLine();
+                    System.out.println("Giorni: ");
+                    int giorni = scanner.nextInt();
+                    for(Barca barca : barche){
+                        if(barca.getNome().equals(nomeBarca)){
+                            p.assegnaPosto(barca, giorni);
+                        }
+                    }
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Scelta non valida");
+                    break;
+            }
+        } while (scelta != 4);
     }
+
+    public static void Menu() {
+        System.out.println("\nMenu");
+        System.out.println("1. Inserisci barca");
+        System.out.println("2. Visualizza barche");
+        System.out.println("3. Assegna posto");
+        System.out.println("4. Esci");
+    }
+    
+
+    
 }

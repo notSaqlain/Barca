@@ -10,6 +10,7 @@ public class Porto {
 
     public void assegnaPosto(Barca b, int giorni) {
         int posto = 0;
+        
         if (b.getLunghezza() < 10) {
 
             for (int i = 0; i < 20; i++) {
@@ -49,7 +50,7 @@ public class Porto {
             }
         }
         
-        System.out.println("La barca " + b.getNome() + " è stata assegnata al posto " + posto+1);
+        System.out.println("La barca " + b.getNome() + " è stata assegnata al posto " + posto);
         if (b.getTipologia()) {
             System.out.println("Il costo dell'affitto è di " + 20 * b.getLunghezza() * giorni + " eur");
         } else {
