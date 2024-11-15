@@ -17,5 +17,10 @@ public class Main {
             System.out.println(b);
         }
 
+        Porto p = new Porto();
+        p.assegnaPosto(b1, 5);
+        p.assegnaPosto(b2, 5);
+        p.assegnaPosto(b3, 5);
+
     }
 }
