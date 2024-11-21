@@ -52,7 +52,8 @@ public class Barca {
     public void setTipologia(boolean tipologia){
         this.tipologia = tipologia;
     }
-
+    
+    @Override
     public String toString(){
         if (tipologia){
             return "Nome: " + nome + " | Nazionalita: " + nazionalita + " | Lunghezza: " + lunghezza + " | Stazza: " + stazza + " | Tipologia: Motore";
