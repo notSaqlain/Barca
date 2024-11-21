@@ -1,6 +1,6 @@
 public class Porto {
 
-    private Barca[] postiBarca = new Barca[100];
+    private final Barca[] postiBarca = new Barca[100];
 
     public Porto() {
         for (int i = 0; i < postiBarca.length; i++) {
